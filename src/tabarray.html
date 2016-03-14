@@ -31,7 +31,7 @@
            <button ng-hide="form.readonly"
                    ng-click="selected.tab = deleteFromArray($index).length - 1"
                    type="button"
-                   class="btn {{ form.style.remove || 'btn-default' }} pull-right">
+                   class="{{ form.style.remove }}">
              <i class="glyphicon glyphicon-trash"></i>
              {{ form.remove || 'Remove'}}
            </button>
