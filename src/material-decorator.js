@@ -137,7 +137,7 @@
       args.form.selectOptions = [];
       args.form.getOptions = getOptionsHandler;
 
-      if (args.form.schema.links && (typeof args.form.schema.links) === 'object') {
+      if (args.form.schema && args.form.schema.links && (typeof args.form.schema.links) === 'object') {
         var link;
         var related = /({)([^}]*)(})/gm;
         var source = /{{([^}]*)}}/gm;
