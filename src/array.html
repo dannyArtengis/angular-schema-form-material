@@ -8,13 +8,12 @@
              ng-repeat="item in modelArray track by $index"
              schema-form-array-items
              class="{{form.fieldHtmlClass}}">
-      <md-button flex="none" flex-order="2"
-                 type="button"
+      <md-button type="button"
+                 flex-order="100"
                  ng-hide="form.readonly || form.remove === null"
                  ng-click="deleteFromArray($index)"
                  ng-disabled="form.schema.minItems >= modelArray.length"
-                 class="md-icon-button" aria-label="More"
-                 style="position: relative; z-index: 20;">
+                 class="md-icon-button" aria-label="More">
         <md-icon>close</md-icon>
       </md-button>
     </md-list-item>
