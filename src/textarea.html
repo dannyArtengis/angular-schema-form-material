@@ -1,10 +1,14 @@
 <md-input-container class="{{::form.htmlClass}} schema-form-textarea" sf-messages sf-layout>
-  <label ng-show="showTitle()" for="{{::form.key|sfCamelKey}}">{{::form.title}}</label>
+
+  <!--<label ng-show="showTitle()" for="{{::form.key|sfCamelKey}}">{{::form.title}}</label>
   <textarea ng-class="::form.fieldHtmlClass"
             id="{{::form.key|sfCamelKey}}"
             sf-changed="form"
             ng-disabled="::form.readonly"
             sf-field-model
             schema-validate="form"
-            name="{{::form.key|sfCamelKey}}"></textarea>
+            name="{{::form.key|sfCamelKey}}"></textarea>-->
+
+  <div text-angular ta-toolbar="[['bold-MD','italics-MD', 'underline-MD', 'ul-MD']]" sf-field-model style="padding:0;"></div>
+
 </md-input-container>
