@@ -1,4 +1,5 @@
 (function(angular, undefined) {'use strict';
+
   angular
     .module('schemaForm')
     .config(materialDecoratorConfig)
@@ -75,6 +76,7 @@
     function sfMessagesNodeHandler() {
         var html = '<div ng-if="ngModel.$invalid" ng-messages="{dummy: true}" class="ng-active">' +
           '<div ng-message="dummy" class="md-input-message-animation" sf-message="form.description"></div></div>';
+      var html2 = '<div ng-if="ngModel.$invalid" ng-messages="ngModel.$error"><div sf-message ng-message></div></div>';
       var div = document.createElement('div');
       div.innerHTML = html;
       return div.firstChild;
@@ -137,7 +139,7 @@
       args.form.selectOptions = [];
       args.form.getOptions = getOptionsHandler;
 
-      if (args.form.schema.links && (typeof args.form.schema.links) === 'object') {
+      if (args.form.schema && args.form.schema.links && (typeof args.form.schema.links) === 'object') {
         var link;
         var related = /({)([^}]*)(})/gm;
         var source = /{{([^}]*)}}/gm;
@@ -226,7 +228,7 @@
       return data.titleMap;
     }
     else if (data.enum && data.enum.length) {
-      for (i = 0; i < data.enum.length; i++) {
+      for (var i = 0; i < data.enum.length; i++) {
         if (data.enum[i] && data.enum[i].length) {
           enumTitleMap.push({ name: data.enum[i], value: data.enum[i] });
         };
@@ -265,9 +267,14 @@
       var part, i, key;
       key = formKey.slice();
       for (i = 0; i < key.length; i++) {
-        part = key[i].toLowerCase().split('');
-        if (i && part.length) { part[0] = part[0].toUpperCase(); };
-        key[i] = part.join('');
+        if(typeof key[i] === 'string') {
+          part = key[i].toLowerCase().split('');
+          if (i && part.length) {
+            part[0] = part[0].toUpperCase();
+          }
+          ;
+          key[i] = part.join('');
+        }
       };
       return key.join('');
     };
