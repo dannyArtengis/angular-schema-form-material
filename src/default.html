@@ -3,7 +3,7 @@
                     sf-messages sf-layout sf-material-class="md-input-has-value">
   <label  ng-show="showTitle()" for="{{::form.key|sfCamelKey}}">{{::form.title}}</label>
   <input sf-field-model
-         md-autofocus="{{form.autofocus}}"
+         md-autofocus="{{form.autofocus==='true'}}"
          ng-show="::form.key"
          type="{{::form.type}}"
          step="any"
