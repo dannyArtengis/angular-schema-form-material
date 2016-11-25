@@ -23,11 +23,12 @@
   ],
   "dependencies": {
     "angular-schema-form": ">=0.8.13",
-    "angular-material": ">=1.1.0",
-    "angular": ">=1.5.5",
-    "angular-animate": ">=1.5.5",
-    "angular-sanitize": ">=1.5.5",
-    "angular-messages": ">=1.5.5"
+    "angular-material": "1.1.1",
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-aria": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-messages": "1.5.8"
   },
   "devDependencies": {
     "angular-ui-ace": "~0.2.3",
